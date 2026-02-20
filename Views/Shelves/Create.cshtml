@@ -1,0 +1,29 @@
+﻿@model TQInventory.Domin.Entities.Shelf
+
+<h2>إضافة رف جديد</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="RowNumber"></label>
+        <input asp-for="RowNumber" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ColumnLetter"></label>
+        <input asp-for="ColumnLetter" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>المستودع</label>
+        <select asp-for="WarehouseId" asp-items="ViewBag.Warehouses" class="form-control">
+            <option value="">اختر مستودع</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">حفظ</button>
+</form>

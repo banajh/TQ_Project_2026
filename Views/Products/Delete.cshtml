@@ -1,0 +1,11 @@
+﻿@using TQInventory.Domin.Entities;
+@model Product
+
+
+
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">حذف</button>
+    <a asp-action="Index" class="btn btn-secondary">إلغاء</a>
+</form>
